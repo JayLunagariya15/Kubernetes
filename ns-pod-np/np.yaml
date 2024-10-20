@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: rules-np
+  namespace: jay-ns
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx-pod
+  policyTypes:
+    - Ingress
