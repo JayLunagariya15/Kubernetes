@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: chrome
+  labels:
+    app: chrome
+  namespace: jaylunagariya
+spec:
+  containers:
+    - name: chrome-pod
+      image: linuxserver/opera
+      ports:
+        - containerPort: 3000
