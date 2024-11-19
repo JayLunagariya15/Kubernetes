@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-volume
+  namespace: jay
+  labels:
+    app: pv-jay
+spec:
+  accessModes: 
+    - ReadWriteMany
+  azureFile:
+    secretName: azure-secret
+    shareName: jay-share
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: sc-jay

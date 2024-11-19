@@ -8,8 +8,8 @@ metadata:
 spec:
   volumes:
     - name: nginx-volume
-      emptyDir:
-        sizeLimit: 1Gi
+      persistentVolumeClaim: 
+        claimName: pv-claim
   containers:
     - name: nginx-volume
       image: nginx
@@ -25,7 +25,3 @@ spec:
       volumeMounts:
         - name: nginx-volume
           mountPath: /var/other/
-
-
-
-# this is volume file which can be delete after pod delete but not when pod restart 
