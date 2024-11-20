@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: test-pv
+  namespace: jay
+  labels:
+    app: test-pv
+spec:
+  accessModes: 
+    - ReadWriteMany
+  azureFile:
+    secretName: azure-secret
+    shareName: lunagariya-share
+  capacity:
+    storage: 10Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: tc
