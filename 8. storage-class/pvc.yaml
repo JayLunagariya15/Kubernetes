@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prac-pvc
+  namespace: practice
+  labels:
+    app: prac-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: azurefile
+  # storageClassName: storage-prac
+  resources:
+    requests:
+      storage: 5Gi

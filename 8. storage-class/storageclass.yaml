@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: storage-prac
+  namespace: practice
+provisioner: ${PROVISIONER}  #Get this from AKS website of StorageClass 
+parameters:  
+  storageAccount: ${STORAGE_ACCOUNT}
+  resourceGroupName: ${RESOURCE_GROUP}
+reclaimPolicy: Retain
