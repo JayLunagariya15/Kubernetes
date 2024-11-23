@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fox
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firefox-pod
+  namespace: fox
+  labels:
+    app: firefox
+spec:
+  nodeSelector:
+    pool: second
+  containers:
+    - name: firefox-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      
+
+# to create label on specific node apply below command and you can replce name accordingly
+# kubectl label node <node-name> <key>=<value>
+
+# to remove label on specific node apply below command and you can replce name accordingly
+# kubectl label node <node-name> <key>-
